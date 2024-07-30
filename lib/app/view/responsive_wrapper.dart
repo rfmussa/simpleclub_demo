@@ -10,7 +10,7 @@ class ResponsiveBreakPointWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return ResponsiveBreakpoints.builder(
-      child: ResponsiveViewWrapper(child: child),
+      child: child,
       breakpoints: [
         const Breakpoint(start: 0, end: 440, name: MOBILE),
         const Breakpoint(start: 440, end: 850, name: TABLET),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:letslearn/core/models/lessons.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+
+import '../widgets/lesson_content_card.dart';
 
 class TaskPageWidget extends StatefulWidget {
   const TaskPageWidget({required this.tasks, super.key});
@@ -17,31 +20,26 @@ class _TaskPageWidgetState extends State<TaskPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveConstraints(
-      conditionalConstraints: const [
-        Condition.equals(name: MOBILE, value: BoxConstraints(maxWidth: 600)),
-        Condition.equals(name: TABLET, value: BoxConstraints(maxHeight: 700)),
-      ],
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: FormBuilder(
-            key: _formKey,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ...widget.tasks.map(_buildTaskCard),
-                const SizedBox(height: 16),
-                const ElevatedButton(
-                  onPressed: null,
-                  child: Text('Submit'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+    final constraints = ResponsiveValue<BoxConstraints>(
+          context,
+          conditionalValues: [
+            Condition.equals(
+                name: MOBILE,
+                value: BoxConstraints(maxWidth: 100.sw, minHeight: 90.sh)),
+            Condition.equals(
+                name: TABLET, value: BoxConstraints(maxHeight: 70.sw)),
+            Condition.equals(
+                name: DESKTOP, value: BoxConstraints(maxHeight: 80.sw)),
+          ],
+        ).value ??
+        BoxConstraints(maxHeight: 80.sh, minWidth: 60.sw);
+
+    final contentWidgets = widget.tasks.map(_buildTaskCard).toList();
+
+    return LessonContentCard(
+      title: 'Tasks',
+      contentWidgets: contentWidgets,
+      constraints: constraints,
     );
   }
 

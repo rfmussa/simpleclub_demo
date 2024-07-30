@@ -33,7 +33,7 @@ class ComponentPageModel with _$ComponentPageModel {
 
 @Freezed(
   unionKey: 'type',
-  unionValueCase: FreezedUnionCase.pascal,
+  unionValueCase: FreezedUnionCase.none,
   fallbackUnion: 'fallback',
 )
 sealed class ComponentModel with _$ComponentModel {

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letslearn/core/models/lessons.dart';
@@ -15,15 +16,12 @@ class ComponentWidget extends StatelessWidget {
     switch (component) {
       case TextComponent():
         return Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
-            Flexible(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: Text(
-                  component.content,
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: Text(
+                component.content,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
           ],

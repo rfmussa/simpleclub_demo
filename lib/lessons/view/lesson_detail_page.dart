@@ -5,8 +5,8 @@ import 'package:letslearn/core/models/lessons.dart';
 import 'package:letslearn/lessons/cubit/lesson_cubit.dart';
 import 'package:letslearn/lessons/cubit/lessons_cubit.dart';
 import 'package:letslearn/lessons/view/components_page.dart';
-import 'package:letslearn/lessons/widgets/responsive_page_view_widget.dart';
 import 'package:letslearn/lessons/view/task_page.dart';
+import 'package:letslearn/lessons/widgets/responsive_page_view_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 @RoutePage()
@@ -86,17 +86,15 @@ class _LessonDetailViewState extends State<_LessonDetailView> {
                   ),
                 ),
               ),
-              Expanded(
-                child: ResponsivePageViewWidget(
-                  pageController: _pageController,
-                  onPageChanged: context.read<LessonCubit>().onPageChanged,
-                  pages: [
-                    for (final page in state.lesson.pages)
-                      ComponentsPageWidget(page: page),
-                    if (state.lesson.tasks != null)
-                      TaskPageWidget(tasks: state.lesson.tasks!),
-                  ],
-                ),
+              ResponsivePageViewWidget(
+                pageController: _pageController,
+                onPageChanged: context.read<LessonCubit>().onPageChanged,
+                pages: [
+                  for (final page in state.lesson.pages)
+                    ComponentsPageWidget(page: page),
+                  if (state.lesson.tasks != null)
+                    TaskPageWidget(tasks: state.lesson.tasks!),
+                ],
               ),
             ],
           ),
