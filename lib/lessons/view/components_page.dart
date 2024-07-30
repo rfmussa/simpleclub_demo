@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:letslearn/core/models/lessons.dart';
@@ -33,10 +34,9 @@ Widget build(BuildContext context) {
             child: LayoutBuilder(
               builder: (context, constraints) {
                 return Column(
-                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    AutoSizeText(
                       page.title,
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
