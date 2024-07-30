@@ -13,43 +13,47 @@ class ComponentsPageWidget extends StatelessWidget {
 
   final ComponentPageModel page;
 
-
-@override
-Widget build(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.all(16),
-    child: Card(
-      child: ResponsiveConstraints(
-        conditionalConstraints: const [
-          Condition.smallerThan(
-              name: TABLET,
-              value: BoxConstraints( minHeight: 300)),
-          Condition.largerThan(
-              name: TABLET,
-              value: BoxConstraints(minHeight: 300, minWidth: 500)),
-        ],
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: SingleChildScrollView(
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AutoSizeText(
-                      page.title,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    for (final component in page.components)
-                      ComponentWidget(component: component),
-                  ],
-                );
-              },
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Card(
+        child: ResponsiveConstraints(
+          conditionalConstraints: const [
+            Condition.equals(
+                name: MOBILE, value: BoxConstraints(minHeight: 300)),
+            Condition.equals(
+                name: TABLET,
+                value: BoxConstraints(minHeight: 300, minWidth: 500)),
+            Condition.equals(
+                name: DESKTOP,
+                value: BoxConstraints(minHeight: 300, minWidth: 500)),
+            Condition.equals(
+                name: '4K',
+                value: BoxConstraints(minHeight: 300, minWidth: 500)),
+          ],
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: SingleChildScrollView(
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      AutoSizeText(
+                        page.title,
+                        maxLines: 1,
+                      ),
+                      for (final component in page.components)
+                        ComponentWidget(component: component),
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 }
