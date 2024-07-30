@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:letslearn/core/injection/locator.dart';
@@ -44,6 +45,7 @@ class LessonsListPage extends StatelessWidget {
   }
 
   Widget _buildGrid(List<LessonModel> lessons, int columns) {
+    //TODO use ResponsiveValue for dynamic sized grid items
     return ResponsiveGridView.builder(
       alignment: Alignment.center,
       gridDelegate: const ResponsiveGridDelegate(
@@ -84,14 +86,14 @@ class LessonsListPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              AutoSizeText(
                 lesson.title,
                 style: Theme.of(context).textTheme.titleLarge,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 8),
-              Text(
+              AutoSizeText(
                 lesson.description,
                 style: Theme.of(context).textTheme.titleMedium,
                 maxLines: 4,
@@ -101,6 +103,7 @@ class LessonsListPage extends StatelessWidget {
               Wrap(
                 spacing: 4,
                 runSpacing: 4,
+
                 children: [
                   for (final tag in lesson.tags)
                     Chip(
@@ -114,6 +117,8 @@ class LessonsListPage extends StatelessWidget {
                     ),
                 ],
               ),
+              const Spacer(),
+
               Text(
                 '${lesson.pages.length} Pages',
                 style: Theme.of(context).textTheme.bodyMedium,
