@@ -1,0 +1,345 @@
+{
+  "lessons": [
+    {
+      "id": "lesson_001",
+      "title": "Introduction to Photosynthesis",
+      "description": "Learn about the fundamental process that allows plants to convert light energy into chemical energy, sustaining life on Earth.",
+      "tags": ["biology", "plants", "energy", "ab", "sda", "asd"],
+      "pages": [
+        {
+          "id": "page_001",
+          "title": "What is Photosynthesis?",
+          "components": [
+            {
+              "type": "text",
+              "content": "Photosynthesis is the process used by plants to convert light energy into chemical energy.",
+              "title": "Definition"
+            },
+            {
+              "type": "image",
+              "content": "https://example.com/photosynthesis-diagram.jpg",
+              "caption": "Diagram illustrating the process of photosynthesis"
+            },
+            {
+              "type": "text",
+              "content": "Photosynthesis is a complex process that involves multiple steps and chemical reactions. It's essential for life on Earth as it provides the energy basis for most ecosystems. Through photosynthesis, plants produce oxygen as a byproduct, which is crucial for many organisms, including humans. The process also plays a vital role in the global carbon cycle, helping to regulate atmospheric carbon dioxide levels.",
+              "title": "Importance of Photosynthesis"
+            }
+          ]
+        },
+        {
+          "id": "page_002",
+          "title": "Steps of Photosynthesis",
+          "components": [
+            {
+              "type": "text",
+              "content": "The main steps of photosynthesis include: 1. Light absorption, 2. Water splitting, 3. Carbon fixation",
+              "title": "Key Steps"
+            },
+            {
+              "type": "text",
+              "content": "Light absorption is the initial step where chlorophyll and other pigments in the chloroplasts capture energy from sunlight. This energy is then used in the second step, water splitting, where water molecules are broken down into hydrogen and oxygen. The hydrogen ions and electrons from this process are used to produce ATP and NADPH. In the final step, carbon fixation, the plant uses the energy from ATP and NADPH to convert carbon dioxide from the air into glucose through a series of chemical reactions known as the Calvin cycle. This glucose can then be used by the plant for growth and energy storage.",
+              "title": "Detailed Explanation of Photosynthesis Steps"
+            }
+          ]
+        },
+        {
+          "id": "page_003",
+          "title": "Where Does Photosynthesis Occur?",
+          "components": [
+            {
+              "type": "text",
+              "content": "Photosynthesis occurs in the chloroplasts of plant cells, specifically in structures called thylakoids.",
+              "title": "Location"
+            }
+          ]
+        },
+        {
+          "id": "page_004",
+          "title": "Chloroplast Structure",
+          "components": [
+            {
+              "type": "image",
+              "content": "https://example.com/chloroplast-structure.jpg",
+              "caption": "Structure of a chloroplast"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "task_001",
+          "question": "Which of the following are products of photosynthesis?",
+          "options": [
+            {
+              "id": "opt_001",
+              "text": "Oxygen"
+            },
+            {
+              "id": "opt_002",
+              "text": "Glucose"
+            },
+            {
+              "id": "opt_003",
+              "text": "Carbon dioxide"
+            },
+            {
+              "id": "opt_004",
+              "text": "Water"
+            }
+          ],
+          "correctAnswerIds": ["opt_001", "opt_002"]
+        },
+        {
+          "id": "task_002",
+          "question": "What does a plant need for photosynthesis?",
+          "options": [
+            {
+              "id": "opt_001",
+              "text": "Sunlight"
+            },
+            {
+              "id": "opt_002",
+              "text": "Carbon dioxide"
+            },
+            {
+              "id": "opt_003",
+              "text": "Water"
+            },
+            {
+              "id": "opt_004",
+              "text": "Soil"
+            }
+          ],
+          "correctAnswerIds": ["opt_001", "opt_002", "opt_003"]
+        },
+        {
+          "id": "task_003",
+          "question": "In which part of the plant cell does photosynthesis occur?",
+          "options": [
+            {
+              "id": "opt_001",
+              "text": "Nucleus"
+            },
+            {
+              "id": "opt_002",
+              "text": "Chloroplast"
+            },
+            {
+              "id": "opt_003",
+              "text": "Mitochondria"
+            },
+            {
+              "id": "opt_004",
+              "text": "Vacuole"
+            }
+          ],
+          "correctAnswerIds": ["opt_002"]
+        }
+      ]
+    },
+    {
+      "id": "lesson_002",
+      "title": "Basic Algebra Concepts",
+      "description": "Explore the fundamental principles of algebra, including variables, equations, and problem-solving techniques.",
+      "tags": ["mathematics", "algebra", "equations"],
+      "pages": [
+        {
+          "id": "page_001",
+          "title": "Introduction to Algebra",
+          "components": [
+            {
+              "type": "text",
+              "content": "Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols.",
+              "title": "What is Algebra?"
+            },
+            {
+              "type": "text",
+              "content": "Algebra is a fundamental branch of mathematics that extends arithmetic by using symbols to represent numbers and quantities in formulas and equations. It provides a way to express general relationships between quantities and solve problems that involve unknown values. Algebra is essential in many fields, including science, engineering, economics, and computer science. It forms the basis for more advanced mathematical studies and is crucial for developing logical thinking and problem-solving skills.",
+              "title": "Importance of Algebra"
+            }
+          ]
+        },
+        {
+          "id": "page_002",
+          "title": "Understanding Variables",
+          "components": [
+            {
+              "type": "text",
+              "content": "Variables are symbols (usually letters) that represent numbers.",
+              "title": "Variables"
+            },
+            {
+              "type": "image",
+              "content": "https://example.com/algebra-variables.jpg",
+              "caption": "Examples of algebraic variables"
+            }
+          ]
+        },
+        {
+          "id": "page_003",
+          "title": "Algebraic Equations",
+          "components": [
+            {
+              "type": "text",
+              "content": "An equation is a statement that two expressions are equal. It usually contains at least one variable.",
+              "title": "Equations"
+            },
+            {
+              "type": "text",
+              "content": "Algebraic equations are mathematical statements that show that two expressions are equal. They typically contain one or more variables, represented by letters, and the goal is often to find the value of these variables that make the equation true. Equations can be simple, like x + 5 = 12, or complex, involving multiple variables and operations. Solving equations is a fundamental skill in algebra and involves manipulating the equation while maintaining its balance until the variable is isolated. This process helps in finding solutions to real-world problems by translating them into mathematical language and then solving the resulting equations.",
+              "title": "Understanding Algebraic Equations"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "task_001",
+          "question": "If x + 5 = 12, what is the value of x?",
+          "options": [
+            {
+              "id": "opt_001",
+              "text": "5"
+            },
+            {
+              "id": "opt_002",
+              "text": "7"
+            },
+            {
+              "id": "opt_003",
+              "text": "12"
+            },
+            {
+              "id": "opt_004",
+              "text": "17"
+            }
+          ],
+          "correctAnswerIds": ["opt_002"]
+        },
+        {
+          "id": "task_002",
+          "question": "Which of the following is an equation?",
+          "options": [
+            {
+              "id": "opt_001",
+              "text": "x + y"
+            },
+            {
+              "id": "opt_002",
+              "text": "2x"
+            },
+            {
+              "id": "opt_003",
+              "text": "3x = 15"
+            },
+            {
+              "id": "opt_004",
+              "text": "5y"
+            }
+          ],
+          "correctAnswerIds": ["opt_003"]
+        }
+      ]
+    },
+    {
+      "id": "lesson_003",
+      "title": "Introduction to Atoms",
+      "description": "Discover the basic building blocks of matter and understand the structure and components of atoms.",
+      "tags": ["chemistry", "physics", "atomic structure"],
+      "pages": [
+        {
+          "id": "page_001",
+          "title": "What is an Atom?",
+          "components": [
+            {
+              "type": "text",
+              "content": "An atom is the smallest unit of matter that retains all of the chemical properties of an element.",
+              "title": "Definition of an Atom"
+            },
+            {
+              "type": "text",
+              "content": "Atoms are the fundamental building blocks of all matter in the universe. They are incredibly small, with a typical atom being around 10^-10 meters in diameter. Despite their tiny size, atoms play a crucial role in determining the properties of everything around us. The concept of atoms has evolved over time, from ancient Greek philosophers' ideas to modern quantum mechanical models. Understanding atoms is essential for comprehending chemical reactions, physical properties of materials, and even the nature of the universe itself.",
+              "title": "Importance and Scale of Atoms"
+            }
+          ]
+        },
+        {
+          "id": "page_002",
+          "title": "Atomic Structure",
+          "components": [
+            {
+              "type": "image",
+              "content": "https://example.com/atom-structure.jpg",
+              "caption": "Basic structure of an atom"
+            }
+          ]
+        },
+        {
+          "id": "page_003",
+          "title": "Components of an Atom",
+          "components": [
+            {
+              "type": "text",
+              "content": "The main parts of an atom are protons, neutrons, and electrons.",
+              "title": "Parts of an Atom"
+            },
+            {
+              "type": "text",
+              "content": "Protons are positively charged particles found in the nucleus of an atom. The number of protons determines the element's atomic number and its chemical identity. Neutrons are neutral particles also located in the nucleus, contributing to the atom's mass but not its charge. Electrons are negatively charged particles that orbit the nucleus in shells or energy levels. The arrangement and behavior of these electrons largely determine the atom's chemical properties and how it interacts with other atoms. The complex interplay between these subatomic particles gives rise to the vast diversity of elements and compounds that make up our world.",
+              "title": "Detailed Description of Atomic Components"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "task_001",
+          "question": "Which particle has a negative charge?",
+          "options": [
+            {
+              "id": "opt_001",
+              "text": "Proton"
+            },
+            {
+              "id": "opt_002",
+              "text": "Neutron"
+            },
+            {
+              "id": "opt_003",
+              "text": "Electron"
+            },
+            {
+              "id": "opt_004",
+              "text": "Nucleus"
+            }
+          ],
+          "correctAnswerIds": ["opt_003"]
+        },
+        {
+          "id": "task_002",
+          "question": "Where are protons and neutrons located in an atom?",
+          "options": [
+            {
+              "id": "opt_001",
+              "text": "In the nucleus"
+            },
+            {
+              "id": "opt_002",
+              "text": "In electron shells"
+            },
+            {
+              "id": "opt_003",
+              "text": "Floating freely in the atom"
+            },
+            {
+              "id": "opt_004",
+              "text": "Outside the atom"
+            }
+          ],
+          "correctAnswerIds": ["opt_001"]
+        }
+      ]
+    }
+  ]
+}
