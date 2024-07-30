@@ -1,0 +1,64 @@
+name: letslearn
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.4.0
+
+dependencies:
+  bloc: ^8.1.4
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  json_serializable: ^6.8.0
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+  #navigation
+  auto_route: ^8.3.0
+  flutter_form_builder: ^9.3.0
+
+  #functional prog
+  fpdart: ^1.1.0
+  collection: ^1.18.0
+
+  #logging
+  logger: ^2.4.0
+
+  get_it: ^7.7.0
+
+  #ui and utilities
+  flutter_keyboard_visibility: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_svg: ^2.0.10+1
+  flutter_native_splash: ^2.4.1
+  delightful_toast: ^1.1.0
+  flutter_adaptive_scaffold: ^0.1.11+1
+  flash: ^3.1.1
+
+  smooth_page_indicator: ^1.2.0+3
+  device_preview: ^1.2.0
+  responsive_framework: ^1.4.0
+  google_fonts: ^6.2.1
+  responsive_builder: ^0.7.1
+  expandable_page_view: ^1.0.17
+  auto_size_text: ^3.0.0
+
+dev_dependencies:
+  bloc_test: ^9.1.7
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  very_good_analysis: ^6.0.0
+  build_runner: ^2.4.11
+  envied_generator: ^0.5.4+1
+  freezed: ^2.5.7
+  auto_route_generator: ^8.1.0
+
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/response.json

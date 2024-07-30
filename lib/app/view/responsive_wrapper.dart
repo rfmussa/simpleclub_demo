@@ -8,6 +8,7 @@ class ResponsiveBreakPointWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ResponsiveBreakpoints.builder(
       child: ResponsiveViewWrapper(child: child),
       breakpoints: [
