@@ -86,6 +86,7 @@ class _LessonDetailViewState extends State<_LessonDetailView> {
                   ),
                 ),
               ),
+              const Spacer(),
               ResponsivePageViewWidget(
                 pageController: _pageController,
                 onPageChanged: context.read<LessonCubit>().onPageChanged,
@@ -96,6 +97,7 @@ class _LessonDetailViewState extends State<_LessonDetailView> {
                     TaskPageWidget(tasks: state.lesson.tasks!),
                 ],
               ),
+              const Spacer(),
             ],
           ),
         );
