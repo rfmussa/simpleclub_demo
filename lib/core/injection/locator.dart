@@ -11,7 +11,7 @@ void setupServiceLocator() {
   getIt
     ..registerLazySingleton<LessonRepository>(
 
-       () => RemoteLessonRepository(),
+       () => LessonRepositoryImpl(),
     )
     ..registerLazySingleton<AppRouter>(
       AppRouter.new,

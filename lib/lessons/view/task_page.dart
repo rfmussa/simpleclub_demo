@@ -20,26 +20,14 @@ class _TaskPageWidgetState extends State<TaskPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final constraints = ResponsiveValue<BoxConstraints>(
-          context,
-          conditionalValues: [
-            Condition.equals(
-                name: MOBILE,
-                value: BoxConstraints(maxWidth: 100.sw, minHeight: 90.sh)),
-            Condition.equals(
-                name: TABLET, value: BoxConstraints(maxHeight: 70.sw)),
-            Condition.equals(
-                name: DESKTOP, value: BoxConstraints(maxHeight: 80.sw)),
-          ],
-        ).value ??
-        BoxConstraints(maxHeight: 80.sh, minWidth: 60.sw);
-
+    final constraints = BoxConstraints(maxHeight: 80.sh, minWidth: 60.sw);
     final contentWidgets = widget.tasks.map(_buildTaskCard).toList();
 
     return LessonContentCard(
       title: 'Tasks',
       contentWidgets: contentWidgets,
       constraints: constraints,
+      scrollController: ScrollController(),
     );
   }
 
@@ -63,6 +51,7 @@ class TaskCard extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               task.question,

@@ -28,6 +28,7 @@ class ComponentsPageWidget extends StatelessWidget {
       title: page.title,
       contentWidgets: contentWidgets,
       constraints: constraints,
+      scrollController: ScrollController(),
     );
   }
 }

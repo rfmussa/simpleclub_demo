@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:letslearn/core/models/lessons.dart';
 import 'package:letslearn/core/repositories/lesson_repository.dart';
 
-class RemoteLessonRepository implements LessonRepository {
-  RemoteLessonRepository();
+class LessonRepositoryImpl implements LessonRepository {
+  LessonRepositoryImpl();
 
   final apiUrl =
       'https://gist.githubusercontent.com/rfmussa/4c3d206405be105aedafc58d8253c5ff/raw/96273a4e8a44816fb26d38975f9b1ca2010340f4/response.json';
