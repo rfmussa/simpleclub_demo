@@ -12,17 +12,17 @@
           "components": [
             {
               "type": "text",
-              "content": "Photosynthesis is the process used by plants to convert light energy into chemical energy.",
+              "text": "Photosynthesis is the process used by plants to convert light energy into chemical energy.",
               "title": "Definition"
             },
             {
               "type": "image",
-              "content": "https://example.com/photosynthesis-diagram.jpg",
+              "imageUrl": "https://example.com/photosynthesis-diagram.jpg",
               "caption": "Diagram illustrating the process of photosynthesis"
             },
             {
               "type": "text",
-              "content": "Photosynthesis is a complex process that involves multiple steps and chemical reactions. It's essential for life on Earth as it provides the energy basis for most ecosystems. Through photosynthesis, plants produce oxygen as a byproduct, which is crucial for many organisms, including humans. The process also plays a vital role in the global carbon cycle, helping to regulate atmospheric carbon dioxide levels.",
+              "text": "Photosynthesis is a complex process that involves multiple steps and chemical reactions. It's essential for life on Earth as it provides the energy basis for most ecosystems. Through photosynthesis, plants produce oxygen as a byproduct, which is crucial for many organisms, including humans. The process also plays a vital role in the global carbon cycle, helping to regulate atmospheric carbon dioxide levels.",
               "title": "Importance of Photosynthesis"
             }
           ]
@@ -33,12 +33,12 @@
           "components": [
             {
               "type": "text",
-              "content": "The main steps of photosynthesis include: 1. Light absorption, 2. Water splitting, 3. Carbon fixation",
+              "text": "The main steps of photosynthesis include: 1. Light absorption, 2. Water splitting, 3. Carbon fixation",
               "title": "Key Steps"
             },
             {
               "type": "text",
-              "content": "Light absorption is the initial step where chlorophyll and other pigments in the chloroplasts capture energy from sunlight. This energy is then used in the second step, water splitting, where water molecules are broken down into hydrogen and oxygen. The hydrogen ions and electrons from this process are used to produce ATP and NADPH. In the final step, carbon fixation, the plant uses the energy from ATP and NADPH to convert carbon dioxide from the air into glucose through a series of chemical reactions known as the Calvin cycle. This glucose can then be used by the plant for growth and energy storage.",
+              "text": "Light absorption is the initial step where chlorophyll and other pigments in the chloroplasts capture energy from sunlight. This energy is then used in the second step, water splitting, where water molecules are broken down into hydrogen and oxygen. The hydrogen ions and electrons from this process are used to produce ATP and NADPH. In the final step, carbon fixation, the plant uses the energy from ATP and NADPH to convert carbon dioxide from the air into glucose through a series of chemical reactions known as the Calvin cycle. This glucose can then be used by the plant for growth and energy storage.",
               "title": "Detailed Explanation of Photosynthesis Steps"
             }
           ]
@@ -49,7 +49,7 @@
           "components": [
             {
               "type": "text",
-              "content": "Photosynthesis occurs in the chloroplasts of plant cells, specifically in structures called thylakoids.",
+              "text": "Photosynthesis occurs in the chloroplasts of plant cells, specifically in structures called thylakoids.",
               "title": "Location"
             }
           ]
@@ -60,7 +60,7 @@
           "components": [
             {
               "type": "image",
-              "content": "https://example.com/chloroplast-structure.jpg",
+              "imageUrl": "https://example.com/chloroplast-structure.jpg",
               "caption": "Structure of a chloroplast"
             }
           ]
@@ -150,12 +150,12 @@
           "components": [
             {
               "type": "text",
-              "content": "Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols.",
+              "text": "Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols.",
               "title": "What is Algebra?"
             },
             {
               "type": "text",
-              "content": "Algebra is a fundamental branch of mathematics that extends arithmetic by using symbols to represent numbers and quantities in formulas and equations. It provides a way to express general relationships between quantities and solve problems that involve unknown values. Algebra is essential in many fields, including science, engineering, economics, and computer science. It forms the basis for more advanced mathematical studies and is crucial for developing logical thinking and problem-solving skills.",
+              "text": "Algebra is a fundamental branch of mathematics that extends arithmetic by using symbols to represent numbers and quantities in formulas and equations. It provides a way to express general relationships between quantities and solve problems that involve unknown values. Algebra is essential in many fields, including science, engineering, economics, and computer science. It forms the basis for more advanced mathematical studies and is crucial for developing logical thinking and problem-solving skills.",
               "title": "Importance of Algebra"
             }
           ]
@@ -166,12 +166,12 @@
           "components": [
             {
               "type": "text",
-              "content": "Variables are symbols (usually letters) that represent numbers.",
+              "text": "Variables are symbols (usually letters) that represent numbers.",
               "title": "Variables"
             },
             {
               "type": "image",
-              "content": "https://example.com/algebra-variables.jpg",
+              "imageUrl": "https://example.com/algebra-variables.jpg",
               "caption": "Examples of algebraic variables"
             }
           ]
@@ -182,12 +182,12 @@
           "components": [
             {
               "type": "text",
-              "content": "An equation is a statement that two expressions are equal. It usually contains at least one variable.",
+              "text": "An equation is a statement that two expressions are equal. It usually contains at least one variable.",
               "title": "Equations"
             },
             {
               "type": "text",
-              "content": "Algebraic equations are mathematical statements that show that two expressions are equal. They typically contain one or more variables, represented by letters, and the goal is often to find the value of these variables that make the equation true. Equations can be simple, like x + 5 = 12, or complex, involving multiple variables and operations. Solving equations is a fundamental skill in algebra and involves manipulating the equation while maintaining its balance until the variable is isolated. This process helps in finding solutions to real-world problems by translating them into mathematical language and then solving the resulting equations.",
+              "text": "Algebraic equations are mathematical statements that show that two expressions are equal. They typically contain one or more variables, represented by letters, and the goal is often to find the value of these variables that make the equation true. Equations can be simple, like x + 5 = 12, or complex, involving multiple variables and operations. Solving equations is a fundamental skill in algebra and involves manipulating the equation while maintaining its balance until the variable is isolated. This process helps in finding solutions to real-world problems by translating them into mathematical language and then solving the resulting equations.",
               "title": "Understanding Algebraic Equations"
             }
           ]
@@ -254,12 +254,12 @@
           "components": [
             {
               "type": "text",
-              "content": "An atom is the smallest unit of matter that retains all of the chemical properties of an element.",
+              "text": "An atom is the smallest unit of matter that retains all of the chemical properties of an element.",
               "title": "Definition of an Atom"
             },
             {
               "type": "text",
-              "content": "Atoms are the fundamental building blocks of all matter in the universe. They are incredibly small, with a typical atom being around 10^-10 meters in diameter. Despite their tiny size, atoms play a crucial role in determining the properties of everything around us. The concept of atoms has evolved over time, from ancient Greek philosophers' ideas to modern quantum mechanical models. Understanding atoms is essential for comprehending chemical reactions, physical properties of materials, and even the nature of the universe itself.",
+              "text": "Atoms are the fundamental building blocks of all matter in the universe. They are incredibly small, with a typical atom being around 10^-10 meters in diameter. Despite their tiny size, atoms play a crucial role in determining the properties of everything around us. The concept of atoms has evolved over time, from ancient Greek philosophers' ideas to modern quantum mechanical models. Understanding atoms is essential for comprehending chemical reactions, physical properties of materials, and even the nature of the universe itself.",
               "title": "Importance and Scale of Atoms"
             }
           ]
@@ -270,7 +270,7 @@
           "components": [
             {
               "type": "image",
-              "content": "https://example.com/atom-structure.jpg",
+              "imageUrl": "https://example.com/atom-structure.jpg",
               "caption": "Basic structure of an atom"
             }
           ]
@@ -281,12 +281,12 @@
           "components": [
             {
               "type": "text",
-              "content": "The main parts of an atom are protons, neutrons, and electrons.",
+              "text": "The main parts of an atom are protons, neutrons, and electrons.",
               "title": "Parts of an Atom"
             },
             {
               "type": "text",
-              "content": "Protons are positively charged particles found in the nucleus of an atom. The number of protons determines the element's atomic number and its chemical identity. Neutrons are neutral particles also located in the nucleus, contributing to the atom's mass but not its charge. Electrons are negatively charged particles that orbit the nucleus in shells or energy levels. The arrangement and behavior of these electrons largely determine the atom's chemical properties and how it interacts with other atoms. The complex interplay between these subatomic particles gives rise to the vast diversity of elements and compounds that make up our world.",
+              "text": "Protons are positively charged particles found in the nucleus of an atom. The number of protons determines the element's atomic number and its chemical identity. Neutrons are neutral particles also located in the nucleus, contributing to the atom's mass but not its charge. Electrons are negatively charged particles that orbit the nucleus in shells or energy levels. The arrangement and behavior of these electrons largely determine the atom's chemical properties and how it interacts with other atoms. The complex interplay between these subatomic particles gives rise to the vast diversity of elements and compounds that make up our world.",
               "title": "Detailed Description of Atomic Components"
             }
           ]

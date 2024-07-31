@@ -7,7 +7,7 @@ class RemoteLessonRepository implements LessonRepository {
   RemoteLessonRepository();
 
   final apiUrl =
-      'https://gist.githubusercontent.com/rfmussa/4c3d206405be105aedafc58d8253c5ff/raw/d7e647f7b8db2f6912af8e45975d2976b7a92535/response.json';
+      'https://gist.githubusercontent.com/rfmussa/4c3d206405be105aedafc58d8253c5ff/raw/96273a4e8a44816fb26d38975f9b1ca2010340f4/response.json';
 
   @override
   Future<List<LessonModel>> getLessons() async {

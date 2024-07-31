@@ -14,23 +14,23 @@ class ComponentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     switch (component) {
-      case TextComponent():
+      case final TextComponent component:
         return Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: AutoSizeText(
-                component.content,
+                component.text,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
           ],
         );
-      case ImageComponent():
+      case final ImageComponent component:
         return Padding(
           padding: const EdgeInsets.only(bottom: 16),
           child: Image.network(
-            component.content,
+            component.imageUrl,
             fit: BoxFit.cover,
             errorBuilder: (context, error, stackTrace) {
               return const Icon(Icons.error);
@@ -38,13 +38,7 @@ class ComponentWidget extends StatelessWidget {
           ),
         );
       case FallbackComponent():
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 16),
-          child: AutoSizeText(
-            'Unsupported component: ${component.content} ',
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
-        );
+        return const SizedBox.shrink();
     }
   }
 }

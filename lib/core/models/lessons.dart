@@ -38,12 +38,13 @@ class ComponentPageModel with _$ComponentPageModel {
 )
 sealed class ComponentModel with _$ComponentModel {
   const factory ComponentModel.text({
-    required String content,
+    required String text,
     String? title,
   }) = TextComponent;
 
   const factory ComponentModel.image({
-    required String content,
+    String? title,
+    required String imageUrl,
     String? caption,
   }) = ImageComponent;
 
