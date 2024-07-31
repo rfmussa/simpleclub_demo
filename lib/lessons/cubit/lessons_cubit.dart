@@ -3,16 +3,7 @@ import 'package:letslearn/core/injection/locator.dart';
 import 'package:letslearn/core/models/lessons.dart';
 import 'package:letslearn/core/repositories/lesson_repository.dart';
 
-sealed class LessonsState {}
 
-class LessonsInitial extends LessonsState {}
-
-class LessonsLoading extends LessonsState {}
-
-class LessonsLoaded extends LessonsState {
-  LessonsLoaded(this.lessons);
-  final List<LessonModel> lessons;
-}
 
 class LessonsError extends LessonsState {
   LessonsError(this.message);
@@ -32,4 +23,17 @@ class LessonsCubit extends Cubit<LessonsState> {
       emit(LessonsError(e.toString()));
     }
   }
+}
+
+
+// TODO use freezed/equatable to better represent state
+sealed class LessonsState {}
+
+class LessonsInitial extends LessonsState {}
+
+class LessonsLoading extends LessonsState {}
+
+class LessonsLoaded extends LessonsState {
+  LessonsLoaded(this.lessons);
+  final List<LessonModel> lessons;
 }
