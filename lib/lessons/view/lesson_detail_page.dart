@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:letslearn/lessons/cubit/lesson_cubit.dart';
 import 'package:letslearn/core/injection/locator.dart';
+import 'package:letslearn/lessons/cubit/lessons_cubit.dart';
 import 'package:letslearn/lessons/view/components_page.dart';
 import 'package:letslearn/lessons/view/task_page.dart';
 import 'package:letslearn/lessons/widgets/responsive_page_view_widget.dart';
 
 @RoutePage()
 class LessonDetailPage extends StatelessWidget {
-  const LessonDetailPage({@PathParam('id') this.lessonId, super.key});
+  const LessonDetailPage({@QueryParam('id') this.lessonId, super.key});
 
   final String? lessonId;
 
@@ -31,8 +32,6 @@ class _LessonDetailView extends StatefulWidget {
 
 class _LessonDetailViewState extends State<_LessonDetailView> {
   late PageController _pageController;
-
-  final _lessonCubit = getIt<LessonCubit>();
 
   @override
   void initState() {
@@ -61,7 +60,7 @@ class _LessonDetailViewState extends State<_LessonDetailView> {
               appBar: AppBar(title: Text(lesson.title)),
               body: ResponsivePageViewWidget(
                 pageController: _pageController,
-                onPageChanged: _lessonCubit.onPageChanged,
+                onPageChanged: context.read<LessonCubit>().onPageChanged,
                 pages: [
                   ...lesson.pages
                       .map((page) => ComponentsPageWidget(page: page)),
