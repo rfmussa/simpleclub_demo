@@ -1,6 +1,6 @@
 # Lets Learn! 📚
 
-Simpleclub Assignment
+Simpleclub Assignment. This has been built with a focus on making the UI responsive across different screen sizes.
 
 ---
 
@@ -28,7 +28,6 @@ _\*Letslearn works on iOS, Android, Web._
 - Adapt appbar to different sizes
 - Externalize themes/styles/paddings to their separate files
 - Allow abstract types of tasks(similar to content types) 
-- Align ResponsivePageViewWidget arrows to center of the screen
 
 ## Key Dependencies
 
@@ -36,4 +35,5 @@ _\*Letslearn works on iOS, Android, Web._
 - `auto_route`: For navigation
 - `responsive_framework`: For responsive UI design (in hindsight I would have picked another library, not a lot of
   documentation and some learning curve)
+- `responsive_builder`: Helper for responsive design
 - `get_it`: For dependency injection
