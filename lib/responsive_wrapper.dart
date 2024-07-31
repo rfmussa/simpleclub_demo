@@ -28,21 +28,19 @@ class ResponsiveViewWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: MaxWidthBox(
-        maxWidth: 3840,
-        background: Container(color: Colors.indigo),
-        child: ResponsiveScaledBox(
-          width: ResponsiveValue<double?>(context,
-              conditionalValues: const [
-                const Condition.equals(name: MOBILE, value: 420),
-                const Condition.equals(name: TABLET, value: 800),
-                const Condition.equals(name: DESKTOP, value: 1800),
-                const Condition.equals(name: '4K', value: 3840),
-              ]).value,
-          child:
-              BouncingScrollWrapper.builder(context, child, dragWithMouse: true),
-        ),
+    return MaxWidthBox(
+      maxWidth: 3840,
+      background: Container(color: Colors.indigo),
+      child: ResponsiveScaledBox(
+        width: ResponsiveValue<double?>(context,
+            conditionalValues: const [
+              Condition.equals(name: MOBILE, value: 420),
+              Condition.equals(name: TABLET, value: 800),
+              Condition.equals(name: DESKTOP, value: 1800),
+              Condition.equals(name: '4K', value: 3840),
+            ]).value,
+        child:
+            BouncingScrollWrapper.builder(context, child, dragWithMouse: true),
       ),
     );
   }
