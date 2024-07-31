@@ -13,6 +13,10 @@ _\*Letslearn works on iOS, Android, Web._
 - Cubit pattern for state management
 - Navigation Routes set up for web/mobile
 
+## Web Demo 
+
+![Demo](./demo_web.gif)
+
 ## App Architecture
 
 
