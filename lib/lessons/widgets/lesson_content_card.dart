@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 /*
   This widget is used to display a card with a title and a list of widgets
@@ -25,28 +26,28 @@ class LessonContentCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Card(
-        child: Container(
-          constraints: constraints,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: SingleChildScrollView(
-              controller: scrollController ?? ScrollController(),
+        color: Theme.of(context).focusColor,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: SingleChildScrollView(
+            controller: scrollController ?? ScrollController(),
+            child: ConstrainedBox(
+              constraints: constraints,
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  AutoSizeText(
-                    title,
-                    maxLines: 2,
-                    style: Theme.of(context).textTheme.titleLarge,
-                    maxFontSize: 32,
-                    overflow: TextOverflow.ellipsis,
+                  Flexible(
+                    child: AutoSizeText(
+                      title,
+                      maxLines: 2,
+                      style: Theme.of(context).textTheme.titleLarge,
+                      maxFontSize: 32,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   const SizedBox(height: 16),
-                  Column(
-                    children: [
-                      ...contentWidgets,
-                    ],
-                  ),
+                  ...contentWidgets,
                 ],
               ),
             ),

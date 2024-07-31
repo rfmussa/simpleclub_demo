@@ -19,7 +19,7 @@ class ComponentWidget extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
-              child: Text(
+              child: AutoSizeText(
                 component.content,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
@@ -40,7 +40,7 @@ class ComponentWidget extends StatelessWidget {
       case FallbackComponent():
         return Padding(
           padding: const EdgeInsets.only(bottom: 16),
-          child: Text(
+          child: AutoSizeText(
             'Unsupported component: ${component.content} ',
             style: Theme.of(context).textTheme.bodySmall,
           ),

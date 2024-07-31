@@ -25,8 +25,12 @@ class LessonsListPage extends StatelessWidget {
           return switch (state) {
             LessonsLoading() =>
               const Center(child: CircularProgressIndicator()),
-            LessonsLoaded(:final lessons) =>
-              _buildLessonsList(context, lessons),
+            LessonsLoaded(:final lessons) => switch (
+                  ResponsiveBreakpoints.of(context)) {
+                final size when size.largerThan(MOBILE) =>
+                  SizedBox.expand(child: _buildGrid(lessons, 2)),
+                _ => _buildMobileList(lessons),
+              },
             LessonsError(:final message) =>
               Center(child: Text('Error: $message')),
             _ => const Center(child: Text('No lessons available')),
@@ -36,16 +40,8 @@ class LessonsListPage extends StatelessWidget {
     );
   }
 
-  Widget _buildLessonsList(BuildContext context, List<LessonModel> lessons) {
-    return switch (ResponsiveBreakpoints.of(context)) {
-      final size when size.largerThan(MOBILE) =>
-        SizedBox.expand(child: _buildGrid(lessons, 2)),
-      _ => _buildMobileList(lessons),
-    };
-  }
-
   Widget _buildGrid(List<LessonModel> lessons, int columns) {
-    //TODO use ResponsiveValue for dynamic sized grid items
+    // use ResponsiveValue for dynamic sized grid items
     return ResponsiveGridView.builder(
       alignment: Alignment.center,
       gridDelegate: const ResponsiveGridDelegate(
@@ -103,7 +99,6 @@ class LessonsListPage extends StatelessWidget {
               Wrap(
                 spacing: 4,
                 runSpacing: 4,
-
                 children: [
                   for (final tag in lesson.tags)
                     Chip(
@@ -118,7 +113,6 @@ class LessonsListPage extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-
               Text(
                 '${lesson.pages.length} Pages',
                 style: Theme.of(context).textTheme.bodyMedium,
