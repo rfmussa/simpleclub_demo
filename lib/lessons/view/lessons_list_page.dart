@@ -6,6 +6,7 @@ import 'package:letslearn/core/injection/locator.dart';
 import 'package:letslearn/core/models/lessons.dart';
 import 'package:letslearn/core/routes/routes.dart';
 import 'package:letslearn/lessons/cubit/lessons_cubit.dart';
+import 'package:letslearn/lessons/cubit/lessons_state.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 @RoutePage()
@@ -23,16 +24,13 @@ class LessonsListPage extends StatelessWidget {
       body: BlocBuilder<LessonsCubit, LessonsState>(
         builder: (context, state) {
           return switch (state) {
-            LessonsLoading() =>
-              const Center(child: CircularProgressIndicator()),
-            LessonsLoaded(:final lessons) => switch (
-                  ResponsiveBreakpoints.of(context)) {
+            Loading() => const Center(child: CircularProgressIndicator()),
+            Data() => switch (ResponsiveBreakpoints.of(context)) {
                 final size when size.largerThan(MOBILE) =>
-                  SizedBox.expand(child: _buildGrid(lessons, 2)),
-                _ => _buildMobileList(lessons),
+                  SizedBox.expand(child: _buildGrid(state.lessons, 2)),
+                _ => _buildMobileList(state.lessons),
               },
-            LessonsError(:final message) =>
-              Center(child: Text('Error: $message')),
+            Error(:final message) => Center(child: Text('Error: $message')),
             _ => const Center(child: Text('No lessons available')),
           };
         },

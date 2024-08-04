@@ -1,13 +1,14 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:letslearn/core/injection/locator.dart';
 import 'package:letslearn/core/models/lessons.dart';
 import 'package:letslearn/core/repositories/lesson_repository.dart';
-import 'package:letslearn/core/injection/locator.dart';
+import 'package:letslearn/lessons/cubit/lesson_state.dart';
 
 class LessonCubit extends Cubit<LessonState> {
   LessonCubit({LessonModel? lesson, String? lessonId})
-      : super(LessonInitial()) {
+      : super(const LessonState.initial()) {
     if (lesson != null) {
-      emit(LessonLoaded(lesson: lesson));
+      emit(LessonState.data(lesson: lesson));
     } else if (lessonId != null) {
       _fetchLessonById(lessonId);
     }
@@ -16,52 +17,41 @@ class LessonCubit extends Cubit<LessonState> {
   final LessonRepository _repository = getIt<LessonRepository>();
 
   Future<void> _fetchLessonById(String lessonId) async {
-    emit(LessonLoading());
+    emit(const LessonState.loading());
     try {
       final lessons = await _repository.getLessons();
       final lesson = lessons.firstWhere(
         (lesson) => lesson.id == lessonId,
         orElse: () => throw Exception('Lesson not found'),
       );
-      emit(LessonLoaded(lesson: lesson));
+      emit(LessonState.data(lesson: lesson));
     } catch (e) {
-      emit(LessonError(e.toString()));
+      emit(LessonState.error(e.toString()));
     }
   }
 
   void onPageChanged(int page) {
     final currentState = state;
-    if (currentState is LessonLoaded) {
-      emit(LessonLoaded(lesson: currentState.lesson, currentPage: page));
+    switch (currentState) {
+      case Data():
+        emit(
+          LessonState.data(
+            lesson: currentState.lesson,
+            currentPage: page,
+          ),
+        );
+      default:
+        break;
     }
   }
 
   int get pageCount {
     final currentState = state;
-    if (currentState is LessonLoaded) {
-      return currentState.lesson.pages.length +
-          (currentState.lesson.tasks != null ? 1 : 0);
+    switch (currentState) {
+      case Data():
+        return currentState.lesson.pages.length;
+      default:
+        return 0;
     }
-    return 0;
   }
-}
-
-// TODO use freezed/equatable to better represent state
-sealed class LessonState {}
-
-class LessonInitial extends LessonState {}
-
-class LessonLoading extends LessonState {}
-
-class LessonLoaded extends LessonState {
-  LessonLoaded({required this.lesson, this.currentPage = 0});
-
-  final LessonModel lesson;
-  final int currentPage;
-}
-
-class LessonError extends LessonState {
-  LessonError(this.message);
-
-  final String message;
 }

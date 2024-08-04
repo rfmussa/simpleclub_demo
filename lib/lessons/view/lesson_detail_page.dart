@@ -2,8 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:letslearn/lessons/cubit/lesson_cubit.dart';
-import 'package:letslearn/core/injection/locator.dart';
-import 'package:letslearn/lessons/cubit/lessons_cubit.dart';
+import 'package:letslearn/lessons/cubit/lesson_state.dart';
 import 'package:letslearn/lessons/view/components_page.dart';
 import 'package:letslearn/lessons/view/task_page.dart';
 import 'package:letslearn/lessons/widgets/responsive_page_view_widget.dart';
@@ -50,13 +49,13 @@ class _LessonDetailViewState extends State<_LessonDetailView> {
     return BlocBuilder<LessonCubit, LessonState>(
       builder: (context, state) {
         return switch (state) {
-          LessonInitial() => const Scaffold(
+          Initial() => const Scaffold(
               body: Center(child: Text('Initializing...')),
             ),
-          LessonLoading() => const Scaffold(
+          Loading() => const Scaffold(
               body: Center(child: CircularProgressIndicator()),
             ),
-          LessonLoaded(:final lesson, :final currentPage) => Scaffold(
+          Data(:final lesson) => Scaffold(
               appBar: AppBar(title: Text(lesson.title)),
               body: ResponsivePageViewWidget(
                 pageController: _pageController,
@@ -64,11 +63,12 @@ class _LessonDetailViewState extends State<_LessonDetailView> {
                 pages: [
                   ...lesson.pages
                       .map((page) => ComponentsPageWidget(page: page)),
-                  if (lesson.tasks != null) TaskPageWidget(tasks: lesson.tasks!),
+                  if (lesson.tasks != null)
+                    TaskPageWidget(tasks: lesson.tasks!),
                 ],
               ),
             ),
-          LessonError(:final message) => Scaffold(
+          Error(:final message) => Scaffold(
               body: Center(child: Text('Error: $message')),
             ),
         };

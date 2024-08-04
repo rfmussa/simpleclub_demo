@@ -2,38 +2,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:letslearn/core/injection/locator.dart';
 import 'package:letslearn/core/models/lessons.dart';
 import 'package:letslearn/core/repositories/lesson_repository.dart';
-
-
-
-class LessonsError extends LessonsState {
-  LessonsError(this.message);
-  final String message;
-}
+import 'package:letslearn/lessons/cubit/lessons_state.dart';
 
 class LessonsCubit extends Cubit<LessonsState> {
-  LessonsCubit() : super(LessonsInitial());
+  LessonsCubit() : super(const Initial());
   final LessonRepository _repository = getIt<LessonRepository>();
 
   Future<void> fetchLessons() async {
-    emit(LessonsLoading());
+    emit(const Loading());
     try {
       final lessons = await _repository.getLessons();
-      emit(LessonsLoaded(lessons));
+      emit(Data(lessons));
     } catch (e) {
-      emit(LessonsError(e.toString()));
+      emit(Error(e.toString()));
     }
   }
-}
-
-
-// TODO use freezed/equatable to better represent state
-sealed class LessonsState {}
-
-class LessonsInitial extends LessonsState {}
-
-class LessonsLoading extends LessonsState {}
-
-class LessonsLoaded extends LessonsState {
-  LessonsLoaded(this.lessons);
-  final List<LessonModel> lessons;
 }
