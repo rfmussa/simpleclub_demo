@@ -10,7 +10,7 @@ _\*Letslearn works on iOS, Android, Web._
 
 - Interactive lessons with multiple pages
 - Responsive design for various screen sizes
-- Cubit pattern for state management
+- Block/Cubit for state management
 - Navigation Routes set up for web/mobile
 
 ## Web Demo 
