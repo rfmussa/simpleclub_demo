@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letslearn/core/models/lessons.dart';
 
-
 class ComponentWidget extends StatelessWidget {
   const ComponentWidget({
-    required this.component, super.key,
+    required this.component,
+    super.key,
   });
 
   final ComponentModel component;
@@ -27,10 +27,11 @@ class ComponentWidget extends StatelessWidget {
           ],
         );
       case final ImageComponent component:
+        //TODO use Image that comes from model, instead of using a placeholder image
         return Padding(
           padding: const EdgeInsets.only(bottom: 16),
           child: Image.network(
-            component.imageUrl,
+            'https://picsum.photos/500/300',
             fit: BoxFit.cover,
             errorBuilder: (context, error, stackTrace) {
               return const Icon(Icons.error);
